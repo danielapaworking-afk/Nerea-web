@@ -497,6 +497,7 @@ button { font-family: inherit; cursor: pointer; }
     inset: 0;
     top: 64px;
     background-color: var(--color-bg);
+    opacity: 1;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -505,8 +506,10 @@ button { font-family: inherit; cursor: pointer; }
     transform: translateX(100%);
     transition: transform 0.3s var(--ease);
   }
+  .navbar__menu:not(.is-open) {
+    pointer-events: none;
+  }
   .navbar__menu.is-open { transform: translateX(0); }
-  .navbar__menu:not(.is-open) { pointer-events: none; }
   .navbar__menu a:not(.btn) { font-size: 1.2rem; }
   .navbar__cta-item { margin-top: var(--space-sm); }
 
