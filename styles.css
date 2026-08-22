@@ -493,7 +493,7 @@ button { font-family: inherit; cursor: pointer; }
   .navbar__toggle { display: flex; }
   .navbar__menu {
     position: fixed;
-    z-index: 200
+    z-index: 200;
     inset: 0;
     top: 64px;
     background-color: var(--color-bg);
