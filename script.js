@@ -112,20 +112,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     form.addEventListener('submit', (event) => {
-      event.preventDefault();
-
       const validations = Object.keys(fields).map((key) => validateField(key));
       const isValid = validations.every(Boolean);
 
       if (!isValid) {
+        event.preventDefault();
         status.textContent = 'Revisa los campos marcados antes de enviar.';
         return;
       }
 
-      // NOTA: acción placeholder. Sustituir "action" del formulario por el
-      // endpoint real (por ejemplo, Formspree o Web3Forms) cuando esté disponible.
-      status.textContent = 'Gracias por tu mensaje. Formulario pendiente de conectar a un servicio de envío.';
-      form.reset();
+      // Validación correcta: dejamos que el formulario se envíe de forma
+      // normal a la URL indicada en el atributo "action" (por ejemplo, Formspree).
+      status.textContent = 'Enviando...';
     });
   }
 
